@@ -14,21 +14,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBOutlet weak var todoTableView: UITableView!
-    var todos: [String] = ["Get Groceries" , "buy strawberries", "Go to Gym", "Children from School", "Complete Todo Assignment"]
+    var todos: [String] = ["Get Groceries" , "buy strawberries", "Go to Gym", "Children from School", "Complete Todo Assignment"] //list of todo tasks
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         todoTableView.delegate = self
         todoTableView.dataSource = self
-        todoTableView.rowHeight = 35
+        todoTableView.rowHeight = 35 //defines the height of each row in the table view
         
     }
     
     
     @IBAction func addTodo(_ sender: UIButton) { //this is the add button by which user can add more todo tasks to the table view
         
-        let todoAlert = UIAlertController(title: "Add Todo", message: "Add a new Todo", preferredStyle: .alert)
+        let todoAlert = UIAlertController(title: "Add Todo", message: "Add a new Todo", preferredStyle: .alert)  //alert action
         todoAlert.addTextField()
         
         let addTodoAction = UIAlertAction(title: "Add", style: .default) {(action) in
@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.todos.append(newTodo.text!)
             self.todoTableView.reloadData()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) //cancel action in the alert message
         todoAlert.addAction(addTodoAction)
         todoAlert.addAction(cancelAction)
         

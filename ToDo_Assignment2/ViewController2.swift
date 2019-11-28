@@ -13,7 +13,7 @@ import UIKit
 class ViewController2: UIViewController {
 
     
-    @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var inputTextField: UITextField! //textfield that will display the date picked by the user.
     private var datePicker: UIDatePicker?
     override func viewDidLoad() {
         super.viewDidLoad()
